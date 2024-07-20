@@ -23,6 +23,7 @@ import {
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
+import { MoviesCollection } from '@/collections/movies'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -40,22 +41,7 @@ export default buildConfig({
       },
       fields: [],
     },
-    {
-      slug: 'pages',
-      admin: {
-        useAsTitle: 'title',
-      },
-      fields: [
-        {
-          name: 'title',
-          type: 'text',
-        },
-        {
-          name: 'content',
-          type: 'richText',
-        },
-      ],
-    },
+    MoviesCollection,
     {
       slug: 'media',
       upload: true,
