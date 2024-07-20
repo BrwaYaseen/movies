@@ -1,6 +1,7 @@
 import React from 'react'
-import './globals.scss'
+import './global.scss'
 import { Inter } from 'next/font/google'
+import Header from './Header'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,8 +11,11 @@ const inter = Inter({
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <html className={inter.className}>
-      <body>{children}</body>
+    <html className="dark mx-auto max-w-[1200px]">
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
