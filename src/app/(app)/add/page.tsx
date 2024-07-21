@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Input } from '@/components/ui/input'
+import { addMovieAction } from '@/movies'
 import { posterURL } from '@/movies/utils'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -20,10 +21,10 @@ const Page = () => {
 
   const router = useRouter()
 
-  /*  async function addMovie(id: number) {
+  async function addMovie(id: number) {
     await addMovieAction(id)
     router.push(`/`)
-  } */
+  }
   return (
     <main className="mt-5">
       <div>
@@ -42,7 +43,7 @@ const Page = () => {
                   className="w-full aspect-[6/9] object-cover"
                 />
                 <h1 className="text-center font-bold truncate text-xl my-5">{title}</h1>
-                {/* <Button onClick={() => addMovie(id)}>Add</Button>  */}
+                <Button onClick={() => addMovie(id)}>Add</Button>
               </CarouselItem>
             ))}
           </CarouselContent>
