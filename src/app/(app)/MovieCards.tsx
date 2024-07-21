@@ -9,8 +9,8 @@ import Link from 'next/link'
 import { Media, Movie } from 'payload-types'
 import React, { useState } from 'react'
 
-const MovieCards = () => {
-  const [movies, setMovies] = useState<Movie[]>()
+const MovieCards = ({ movies: initialMovies }: { movies: Movie[] }) => {
+  const [movies, setMovies] = useState<Movie[]>(initialMovies)
   return (
     <div className="flex flex-wrap gap-3">
       {movies?.map((movie) => (
